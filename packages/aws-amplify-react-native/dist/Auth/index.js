@@ -12,16 +12,26 @@
  */
 
 import AuthClass from './Auth';
+import CredentialsManagerClass from './CredentialsManager';
 
 import { ConsoleLogger as Logger } from '../Common';
 
 const logger = new Logger('Auth');
 
-let _instance = null;
+let _instance = null,
+    _credentialsManagerInstance = null;
 
 if (!_instance) {
-  logger.debug('Create Auth Instance');
-  _instance = new AuthClass();
+    logger.debug('Create Auth Instance');
+    _instance = new AuthClass();
+}
+
+if (!_credentialsManagerInstance) {
+    logger.debug('Create CredentialsManager Instance');
+    _instance = new CredentialsManagerClass();
 }
 
 export default Auth = _instance;
+export const CredentialsManager = _credentialsManagerInstance;
+
+Hub.listen('credentials', CredentialsManager);
