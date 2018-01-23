@@ -14,7 +14,7 @@
 import AuthClass from './Auth';
 import CredentialsManagerClass from './CredentialsManager';
 
-import { ConsoleLogger as Logger } from '../Common';
+import { Hub, ConsoleLogger as Logger } from '../Common';
 
 const logger = new Logger('Auth');
 
@@ -27,7 +27,7 @@ if (!_instance) {
 
 if (!_credentialsManagerInstance) {
     logger.debug('Create CredentialsManager Instance');
-    _instance = new CredentialsManagerClass();
+    _credentialsManagerInstance = new CredentialsManagerClass();
 }
 
 export default Auth = _instance;

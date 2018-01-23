@@ -11,7 +11,7 @@
  * and limitations under the License.
  */
 
-import Auth from './Auth';
+import Auth, { CredentialsManager } from './Auth';
 import Analytics from './Analytics';
 import API from './API';
 import Cache from './Cache';
@@ -44,6 +44,7 @@ Amplify.Auth = Auth;
 Amplify.Analytics = Analytics;
 Amplify.API = API;
 Amplify.Cache = Cache;
+Amplify.CredentialsManager = CredentialsManager;
 Amplify.Storage = Storage;
 
 Amplify.I18n = I18n;
@@ -58,6 +59,7 @@ export {
     Analytics,
     API,
     Cache,
+    CredentialsManager,
     Storage,
 
     I18n,
